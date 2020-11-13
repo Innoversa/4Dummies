@@ -30,11 +30,11 @@ function Food(props) {
         const json = await response.json();
         //const item = null;
         console.log(json);
-        for (var i = 0; i < json.data.data.length; i++) {
-            if (json.data.data[i].nsfw || json.data.data[i].is_album) {
+        for (var i = 0; i < json.data.length; i++) {
+            if (json.data[i].nsfw || json.data[i].is_album) {
                 continue;
             }
-            const item = json.data.data[i];
+            const item = json.data[i];
             console.log(item);
             setImg(item);
             break;
