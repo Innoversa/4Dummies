@@ -64,9 +64,9 @@ function App() {
             to_email: "sicongjaxhuang@gmail.com",
             food_name: tempName,
             date: tempDate.toString().substr(0, 16),
-            to_name: "Joshua",
+            to_name: "Mr. Charlie Brent",
             from_name: "Sicong",
-            message: "Hey Dummies, don't forget to check your fridge"
+            message: "Thanks for using 4Dummies Project!"
         };
 
         emailjs.send('service_sr8nsuy', 'template_4r3uh4e', templateParams)
