@@ -54,12 +54,12 @@ function App() {
         var tempName = name;
         var tempDate = selectedDate;
         // get date difference from current date
-        var date1 = new Date();//current date
-        var date2 = tempDate;
+        var date1 = new Date().setHours(0,0,0,0);//current date
+        var date2 = tempDate.setHours(0,0,0,0);
         var diffTime = Math.abs(date2 - date1);
         var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // diff in days
         var color = "#3CB371";
-        if(Number(date1) >= Number(date2)){
+        if((date1) >= (date2) || date2 === new Date()){
             color = "red"
         }
         else if(diffDays <=2){
