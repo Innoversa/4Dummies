@@ -53,6 +53,18 @@ function App() {
     function addCard(food) {
         var tempName = name;
         var tempDate = selectedDate;
+        // get date difference from current date
+        var date1 = new Date();//current date
+        var date2 = tempDate;
+        var diffTime = Math.abs(date2 - date1);
+        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // diff in days
+        var color = "#3CB371";
+        if(Number(date1) >= Number(date2)){
+            color = "red"
+        }
+        else if(diffDays <=2){
+            color = "yellow"
+        }
         var tempArray = cards;
         var ind = cards.length;
         // send name and expiration date of food to backend here
@@ -79,6 +91,7 @@ function App() {
 
         addCards([...cards, < Food text = { tempName }
                 key = { ind }
+                backgroundColor = {color}
                 exp = { tempDate.toString().substr(0, 16) }
                 buttonClick = {
                     () => deleteCard(ind)

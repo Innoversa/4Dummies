@@ -11,6 +11,7 @@ import "./Food.css";
 function Food(props){
     
     const [img, setImg] = React.useState(null);
+    var color = props.backgroundColor;
 
     React.useEffect(async () => {
         const response = await fetch('https://api.imgur.com/3/gallery/search/top?q=' + props.text + ' ext: png OR jpg', 
@@ -42,8 +43,8 @@ function Food(props){
     }, [])
 
     return (
-            
-            <Card className="foodCard">
+           
+            <Card className="foodCard" style={{backgroundColor: color }}>
             <CardActionArea>
            { img && <CardMedia
                 component="img"
